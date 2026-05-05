@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>旭日營 2025 — 與好友同樂，結識新圈子</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500&family=Playfair+Display:ital,wght@0,900;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sun: #F5A623;
+    --dawn: #FF6B35;
+    --sky: #FFD166;
+    --earth: #3D2B1F;
+    --cream: #FFF8EE;
+    --sage: #8B9D77;
+    --mist: #E8D5B7;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--earth);
+    font-family: 'Noto Sans TC', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ─────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #1a0a00 0%, #3D1A00 30%, #7A3000 55%, #F5A623 80%, #FFD166 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 24px;
+  }
+
+  /* sun rays */
+  .rays {
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160vw;
+    height: 160vw;
+    background: conic-gradient(
+      from -90deg,
+      transparent 0deg, rgba(255,209,102,0.12) 3deg, transparent 6deg,
+      transparent 10deg, rgba(255,209,102,0.08) 13deg, transparent 16deg,
+      transparent 20deg, rgba(255,209,102,0.14) 23deg, transparent 26deg,
+      transparent 30deg, rgba(255,209,102,0.09) 33deg, transparent 36deg,
+      transparent 40deg, rgba(255,209,102,0.12) 43deg, transparent 46deg,
+      transparent 50deg, rgba(255,209,102,0.07) 53deg, transparent 56deg,
+      transparent 60deg, rgba(255,209,102,0.11) 63deg, transparent 66deg,
+      transparent 70deg, rgba(255,209,102,0.10) 73deg, transparent 76deg,
+      transparent 80deg, rgba(255,209,102,0.13) 83deg, transparent 86deg,
+      transparent 90deg, rgba(255,209,102,0.08) 93deg, transparent 96deg,
+      transparent 100deg, rgba(255,209,102,0.12) 103deg, transparent 106deg,
+      transparent 110deg, rgba(255,209,102,0.09) 113deg, transparent 116deg,
+      transparent 120deg, rgba(255,209,102,0.14) 123deg, transparent 126deg,
+      transparent 130deg, rgba(255,209,102,0.08) 133deg, transparent 136deg,
+      transparent 140deg, rgba(255,209,102,0.11) 143deg, transparent 146deg,
+      transparent 150deg, rgba(255,209,102,0.07) 153deg, transparent 156deg,
+      transparent 160deg, rgba(255,209,102,0.12) 163deg, transparent 166deg,
+      transparent 170deg, rgba(255,209,102,0.09) 173deg, transparent 176deg,
+      transparent 180deg
+    );
+    animation: rotateRays 60s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes rotateRays {
+    to { transform: translateX(-50%) rotate(360deg); }
+  }
+
+  .hero-badge {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,209,102,0.5);
+    color: var(--sky);
+    font-size: 12px;
+    letter-spacing: 4px;
+    padding: 7px 20px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    backdrop-filter: blur(8px);
+    animation: fadeDown 1s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 900;
+    font-size: clamp(72px, 18vw, 160px);
+    line-height: 0.9;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 4px 40px rgba(245,166,35,0.4);
+    animation: fadeDown 1s 0.15s ease both;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-title span {
+    color: var(--sky);
+  }
+
+  .hero-sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(16px, 3vw, 22px);
+    color: rgba(255,255,255,0.75);
+    margin-top: 20px;
+    text-align: center;
+    animation: fadeDown 1s 0.3s ease both;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+    margin-top: 48px;
+    animation: fadeDown 1s 0.45s ease both;
+    position: relative;
+    z-index: 2;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .meta-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+  }
+
+  .meta-value {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .hero-cta {
+    margin-top: 52px;
+    animation: fadeDown 1s 0.6s ease both;
+    position: relative;
+    z-index: 2;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--dawn), var(--sun));
+    color: #fff;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 16px 44px;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 8px 32px rgba(255,107,53,0.45);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(255,107,53,0.55);
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── ABOUT ────────────────────────────────────── */
+  .about {
+    padding: 100px 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--dawn);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 900;
+    line-height: 1.3;
+    color: var(--earth);
+    margin-bottom: 32px;
+  }
+
+  .section-title em {
+    font-style: normal;
+    color: var(--dawn);
+    position: relative;
+  }
+
+  .section-title em::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--sky);
+    opacity: 0.4;
+    z-index: -1;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .about-text {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #5A3E2B;
+  }
+
+  .about-text p + p { margin-top: 16px; }
+
+  .highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .highlight-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 22px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    box-shadow: 0 2px 16px rgba(61,43,31,0.07);
+    border-left: 4px solid var(--sun);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .highlight-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(61,43,31,0.12);
+  }
+
+  .highlight-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  .highlight-title {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 4px;
+    color: var(--earth);
+  }
+
+  .highlight-desc {
+    font-size: 13px;
+    color: #7A5C45;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 680px) {
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  /* ── SCHEDULE ─────────────────────────────────── */
+  .schedule-section {
+    background: linear-gradient(180deg, var(--cream) 0%, #FFE8CC 100%);
+    padding: 80px 24px;
+  }
+
+  .schedule-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .timeline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .day-block {
+    background: #fff;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 4px 24px rgba(61,43,31,0.08);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .day-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--dawn), var(--sun), var(--sky));
+  }
+
+  .day-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    font-weight: 900;
+    color: var(--mist);
+    line-height: 1;
+    position: absolute;
+    top: 16px;
+    right: 24px;
+  }
+
+  .day-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--earth);
+    margin-bottom: 4px;
+  }
+
+  .day-date {
+    font-size: 13px;
+    color: var(--dawn);
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+
+  .day-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .day-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 14px;
+    color: #5A3E2B;
+    line-height: 1.6;
+  }
+
+  .day-item-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--sun);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  @media (max-width: 680px) {
+    .timeline { grid-template-columns: 1fr; }
+  }
+
+  /* ── ABOUT ROTARY ─────────────────────────────── */
+  .rotary-section {
+    padding: 80px 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .rotary-card {
+    background: var(--earth);
+    border-radius: 28px;
+    padding: 52px 48px;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .rotary-card::after {
+    content: '扶青社';
+    position: absolute;
+    right: -20px;
+    bottom: -40px;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 140px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .rotary-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--sky);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+
+  .rotary-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  .rotary-desc {
+    font-size: 14px;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .rotary-pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .pillar {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 20px 18px;
+    text-align: center;
+  }
+
+  .pillar-emoji { font-size: 28px; margin-bottom: 8px; }
+
+  .pillar-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--sky);
+  }
+
+  @media (max-width: 680px) {
+    .rotary-card { grid-template-columns: 1fr; padding: 36px 28px; }
+  }
+
+  /* ── FORM SECTION ─────────────────────────────── */
+  .form-section {
+    background: linear-gradient(160deg, #FFE8CC 0%, var(--cream) 100%);
+    padding: 100px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .form-section::before {
+    content: '';
+    position: absolute;
+    top: -80px; left: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(245,166,35,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .form-inner {
+    max-width: 660px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .form-card {
+    background: #fff;
+    border-radius: 28px;
+    padding: 52px 48px;
+    box-shadow: 0 8px 48px rgba(61,43,31,0.1);
+    margin-top: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .form-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--dawn), var(--sun), var(--sky));
+  }
+
+  .form-group {
+    margin-bottom: 24px;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--earth);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .form-label span {
+    color: var(--dawn);
+    margin-left: 2px;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1.5px solid var(--mist);
+    border-radius: 12px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 14px;
+    color: var(--earth);
+    background: var(--cream);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    appearance: none;
+  }
+
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    border-color: var(--sun);
+    box-shadow: 0 0 0 3px rgba(245,166,35,0.15);
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .form-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23F5A623' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 44px;
+    cursor: pointer;
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  .radio-option input {
+    accent-color: var(--sun);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  .radio-option span {
+    font-size: 14px;
+    color: var(--earth);
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  .checkbox-option input {
+    accent-color: var(--sun);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .checkbox-option span {
+    font-size: 14px;
+    color: var(--earth);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-hint {
+    font-size: 12px;
+    color: #9A7A65;
+    margin-top: 6px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, var(--dawn), var(--sun));
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(255,107,53,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 8px;
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(255,107,53,0.45);
+  }
+
+  .submit-btn:active {
+    transform: translateY(0);
+  }
+
+  .form-divider {
+    height: 1px;
+    background: var(--mist);
+    margin: 28px 0;
+  }
+
+  .form-note {
+    font-size: 12px;
+    color: #9A7A65;
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 20px;
+  }
+
+  /* success state */
+  .success-state {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .success-state.show { display: block; }
+  .form-form.hidden { display: none; }
+
+  .success-emoji { font-size: 56px; margin-bottom: 20px; }
+
+  .success-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--earth);
+    margin-bottom: 12px;
+  }
+
+  .success-desc {
+    font-size: 15px;
+    color: #7A5C45;
+    line-height: 1.8;
+  }
+
+  /* google form link */
+  .google-form-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #4285f4;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 999px;
+    text-decoration: none;
+    margin-top: 28px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .google-form-link:hover {
+    background: #3367d6;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 680px) {
+    .form-card { padding: 36px 24px; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  /* ── FOOTER ───────────────────────────────────── */
+  footer {
+    background: var(--earth);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  footer strong { color: var(--sky); }
+
+  /* ── SCROLL REVEAL ────────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* nav */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s, backdrop-filter 0.3s;
+  }
+
+  nav.scrolled {
+    background: rgba(61,27,10,0.9);
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-logo {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 900;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--sky); }
+
+  @media (max-width: 540px) {
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">旭日營 ☀️</div>
+  <ul class="nav-links">
+    <li><a href="#about">關於活動</a></li>
+    <li><a href="#schedule">行程</a></li>
+    <li><a href="#rotary">扶青社</a></li>
+    <li><a href="#signup">立即報名</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="rays"></div>
+  <div class="hero-badge">✦ 新東扶青社 × 旭日營 2025 ✦</div>
+  <h1 class="hero-title">旭<span>日</span>營</h1>
+  <p class="hero-sub">暫別城市喧囂，與好友共迎宜蘭的日出</p>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <span class="meta-label">日期</span>
+      <span class="meta-value">6月6日 — 6月7日</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">地點</span>
+      <span class="meta-value">宜蘭包棟民宿</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">住宿</span>
+      <span class="meta-value">包棟民宿</span>
+    </div>
+  </div>
+  <div class="hero-cta">
+    <a href="#signup" class="btn-primary">我要報名 →</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="reveal">
+    <p class="section-label">✦ 活動介紹</p>
+    <h2 class="section-title">找到那群<em>一起認真玩</em><br>也一起認真做事的朋友</h2>
+  </div>
+  <div class="about-grid reveal">
+    <div class="about-text">
+      <p>旭日營，是一場屬於各方好友的聚會。我們邀請你暫時離開城市的快節奏，來到宜蘭的山與海之間，放下手機、放下工作，好好地與人相聚。</p>
+      <p>這裡有老朋友的重逢，也有新朋友的相識。趁著這個週末，打破原本的生活圈，認識不同背景的人，說不定就找到了那個一拍即合的好夥伴。</p>
+      <p>同時，你也會初步認識扶青社的理念與日常，了解我們怎麼一起做公益、怎麼一起玩、怎麼在熱鬧中做真正有意義的事。</p>
+    </div>
+    <div class="highlights">
+      <div class="highlight-card">
+        <div class="highlight-icon">🏡</div>
+        <div>
+          <div class="highlight-title">包棟民宿、放鬆入住</div>
+          <div class="highlight-desc">整棟包下，只屬於我們的空間，自在放鬆，凌晨聊天到天亮也沒問題。</div>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">🌿</div>
+        <div>
+          <div class="highlight-title">遠離城市、走入宜蘭</div>
+          <div class="highlight-desc">換個環境、換個心情，讓宜蘭的空氣幫你清空那些堆積已久的工作壓力。</div>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">🤝</div>
+        <div>
+          <div class="highlight-title">結識不同生活圈的朋友</div>
+          <div class="highlight-desc">打破同溫層，遇見那些在職場之外讓你眼睛一亮的人。</div>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">✨</div>
+        <div>
+          <div class="highlight-title">了解扶青社的日常</div>
+          <div class="highlight-desc">公益活動、餐聚遊玩，各式活動等你來參與，未來可以一起走更長的路。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule-section" id="schedule">
+  <div class="schedule-inner">
+    <div class="reveal">
+      <p class="section-label">✦ 活動行程</p>
+      <h2 class="section-title">兩天一夜，<em>滿滿精彩</em></h2>
+    </div>
+    <div class="timeline reveal">
+      <div class="day-block">
+        <div class="day-number">01</div>
+        <div class="day-title">Day 1 — 出發，相聚</div>
+        <div class="day-date">6 月 6 日（五）</div>
+        <ul class="day-items">
+          <li class="day-item"><div class="day-item-dot"></div><span>集合出發，前往宜蘭</span></li>
+          <li class="day-item"><div class="day-item-dot"></div><span>抵達民宿，安頓入住</span></li>
+          <li class="day-item"><div class="day-item-dot"></div><span>宜蘭在地美食探索</span></li>
+          <li class="day-item"><div class="day-item-dot"></div><span>夜間聚會、遊戲同樂</span></li>
+          <li class="day-item"><div class="day-item-dot"></div><span>扶青社分享交流時光</span></li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <div class="day-number">02</div>
+        <div class="day-title">Day 2 — 探索，相惜</div>
+        <div class="day-date">6 月 7 日（六）</div>
+        <ul class="day-items">
+          <li class="day-item"><div class="day-item-dot"></div><span>悠閒早餐、美好早晨</span></li>
+          <li class="day-item"><div class="day-item-dot"></div><span>宜蘭景點自由探索</span></li>
+          <li class="day-item"><div class="day-item-dot"></div><span>戶外活動體驗</span></li>
+          <li class="day-item"><div class="day-item-dot"></div><span>午餐後依依不捨返程</span></li>
+          <li class="day-item"><div class="day-item-dot"></div><span>帶著新朋友的聯絡方式回家</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROTARY -->
+<section class="rotary-section" id="rotary">
+  <div class="reveal">
+    <div class="rotary-card">
+      <div>
+        <p class="rotary-label">✦ 關於主辦</p>
+        <h3 class="rotary-title">新東扶青社<br>我們是一群<br>熱血又有溫度的朋友</h3>
+        <p class="rotary-desc">扶青社（Rotaract Club）是國際扶輪社旗下的青年組織，新東扶青社匯聚了一群對生活充滿熱情、對社會充滿關懷的年輕人。我們一起做公益、一起出遊、一起慶生、一起成長。如果你也在找一群這樣的朋友，歡迎加入我們的大家庭。</p>
+      </div>
+      <div class="rotary-pillars">
+        <div class="pillar">
+          <div class="pillar-emoji">💛</div>
+          <div class="pillar-name">公益服務</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-emoji">🎉</div>
+          <div class="pillar-name">歡樂聚會</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-emoji">🌍</div>
+          <div class="pillar-name">國際交流</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-emoji">🤝</div>
+          <div class="pillar-name">真誠友誼</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section" id="signup">
+  <div class="form-inner">
+    <div class="reveal" style="text-align:center;">
+      <p class="section-label">✦ 立即報名</p>
+      <h2 class="section-title" style="text-align:center;">心動了嗎？<br><em>留下你的資訊</em></h2>
+      <p style="font-size:15px;color:#7A5C45;margin-top:8px;">填寫下方表單，我們會盡快與你確認報名資訊 🌟</p>
+    </div>
+
+    <div class="form-card reveal">
+      <!-- FORM -->
+      <form class="form-form" id="regForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">姓名 <span>*</span></label>
+            <input class="form-input" type="text" name="name" placeholder="您的大名" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">暱稱</label>
+            <input class="form-input" type="text" name="nickname" placeholder="朋友都怎麼叫你？">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">手機號碼 <span>*</span></label>
+            <input class="form-input" type="tel" name="phone" placeholder="09xx-xxx-xxx" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">電子信箱 <span>*</span></label>
+            <input class="form-input" type="email" name="email" placeholder="your@email.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">性別</label>
+          <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="gender" value="男"> <span>男</span></label>
+            <label class="radio-option"><input type="radio" name="gender" value="女"> <span>女</span></label>
+            <label class="radio-option"><input type="radio" name="gender" value="不公開"> <span>不公開</span></label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">職業 / 學校</label>
+          <input class="form-input" type="text" name="occupation" placeholder="目前的工作或就讀學校">
+        </div>
+
+        <div class="form-divider"></div>
+
+        <div class="form-group">
+          <label class="form-label">是否認識扶青社？ <span>*</span></label>
+          <select class="form-select" name="rotaract_knowledge" required>
+            <option value="" disabled selected>請選擇</option>
+            <option value="完全不了解">完全不了解，第一次聽說</option>
+            <option value="略有耳聞">略有耳聞，想多了解</option>
+            <option value="有些了解">有些了解</option>
+            <option value="非常了解">非常了解，甚至是社員</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">對哪類活動最感興趣？（可複選）</label>
+          <div class="checkbox-group">
+            <label class="checkbox-option"><input type="checkbox" name="interest" value="公益服務活動"> <span>🤝 公益服務活動</span></label>
+            <label class="checkbox-option"><input type="checkbox" name="interest" value="美食聚會"> <span>🍜 美食聚會</span></label>
+            <label class="checkbox-option"><input type="checkbox" name="interest" value="戶外旅遊"> <span>🏕️ 戶外旅遊</span></label>
+            <label class="checkbox-option"><input type="checkbox" name="interest" value="交流分享"> <span>💬 交流分享</span></label>
+            <label class="checkbox-option"><input type="checkbox" name="interest" value="其他"> <span>✨ 其他</span></label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">是透過誰介紹參加的？</label>
+          <input class="form-input" type="text" name="referrer" placeholder="朋友名字 / 社群媒體 / 自己找到的">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">飲食需求或注意事項</label>
+          <input class="form-input" type="text" name="diet" placeholder="素食、過敏原、或其他需要特別注意的">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">想對主辦方說的話</label>
+          <textarea class="form-textarea" name="message" placeholder="期待什麼？有什麼疑問？或是單純想說 Hi！都歡迎 😊"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">✨ 送出報名表</button>
+        <p class="form-note">提交後我們將透過 Email 或電話與您確認報名狀態<br>如有疑問歡迎私訊新東扶青社官方帳號</p>
+      </form>
+
+      <!-- SUCCESS STATE -->
+      <div class="success-state" id="successState">
+        <div class="success-emoji">🌅</div>
+        <div class="success-title">報名成功！太棒了 🎉</div>
+        <div class="success-desc">
+          謝謝你的熱情！我們已收到你的報名資訊<br>
+          主辦團隊會盡快與你聯繫確認<br>
+          期待在宜蘭與你相見 ☀️<br><br>
+          <strong>旭日營 | 6/6–6/7 | 宜蘭</strong>
+        </div>
+        <a href="https://docs.google.com/forms/create" target="_blank" class="google-form-link">
+          📋 用 Google 表單也可以報名
+        </a>
+      </div>
+    </div>
+
+    <!-- Google Form 替代方案說明 -->
+    <div class="reveal" style="text-align:center;margin-top:32px;">
+      <p style="font-size:13px;color:#9A7A65;line-height:1.8;">
+        💡 主辦方可將上方表單資料串接至 Google 表單<br>
+        或直接使用下方 Google 表單連結讓參加者填寫
+      </p>
+      <a href="#" id="googleFormBtn" class="google-form-link" style="margin-top:16px;" target="_blank">
+        📋 開啟 Google 報名表單
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>旭日營 2025</strong></p>
+  <p>主辦：新東扶青社 Rotaract Club</p>
+  <p>活動日期：2025年6月6日 — 6月7日 ｜ 地點：宜蘭</p>
+  <p style="margin-top:16px;">Made with ☀️ & ❤️ by 新東扶青社</p>
+</footer>
+
+<script>
+  // Scroll nav
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+
+  // Form submit — builds Google Form prefill URL
+  document.getElementById('regForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const data = new FormData(this);
+    const name = data.get('name') || '';
+    const nickname = data.get('nickname') || '';
+    const phone = data.get('phone') || '';
+    const email = data.get('email') || '';
+    const gender = data.get('gender') || '';
+    const occupation = data.get('occupation') || '';
+    const rotaract = data.get('rotaract_knowledge') || '';
+    const referrer = data.get('referrer') || '';
+    const diet = data.get('diet') || '';
+    const message = data.get('message') || '';
+
+    // Show success
+    document.querySelector('.form-form').classList.add('hidden');
+    document.getElementById('successState').classList.add('show');
+
+    // Scroll to success
+    document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
+
+    // Build a Google Form pre-fill URL (replace FORM_ID and entry IDs with real ones)
+    // Template:
+    // https://docs.google.com/forms/d/e/FORM_ID/viewform?usp=pp_url
+    //   &entry.XXXXX=姓名&entry.YYYYY=手機 ...
+    // Organisers: replace FORM_ID below with your actual Google Form ID
+    const FORM_ID = 'YOUR_GOOGLE_FORM_ID'; // ← 請替換成你的 Google 表單 ID
+    const prefillUrl = `https://docs.google.com/forms/d/e/${FORM_ID}/viewform?usp=pp_url`
+      + `&entry.100000001=${encodeURIComponent(name)}`
+      + `&entry.100000002=${encodeURIComponent(nickname)}`
+      + `&entry.100000003=${encodeURIComponent(phone)}`
+      + `&entry.100000004=${encodeURIComponent(email)}`
+      + `&entry.100000005=${encodeURIComponent(gender)}`
+      + `&entry.100000006=${encodeURIComponent(occupation)}`
+      + `&entry.100000007=${encodeURIComponent(rotaract)}`
+      + `&entry.100000008=${encodeURIComponent(referrer)}`
+      + `&entry.100000009=${encodeURIComponent(diet)}`
+      + `&entry.100000010=${encodeURIComponent(message)}`;
+
+    document.getElementById('googleFormBtn').href = prefillUrl;
+  });
+</script>
+</body>
+</html>
