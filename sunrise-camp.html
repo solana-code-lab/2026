@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>旭日營 2025 — 與好友同樂，結識新圈子</title>
+<title>旭日營 2026 — 與好友同樂，結識新圈子</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500&family=Playfair+Display:ital,wght@0,900;1,700&display=swap" rel="stylesheet">
 <style>
@@ -829,9 +829,9 @@
   </div>
   <div class="about-grid reveal">
     <div class="about-text">
-      <p>旭日營，是一場屬於各方好友的聚會。我們邀請你暫時離開城市的快節奏，來到宜蘭的山與海之間，放下手機、放下工作，好好地與人相聚。</p>
-      <p>這裡有老朋友的重逢，也有新朋友的相識。趁著這個週末，打破原本的生活圈，認識不同背景的人，說不定就找到了那個一拍即合的好夥伴。</p>
-      <p>同時，你也會初步認識扶青社的理念與日常，了解我們怎麼一起做公益、怎麼一起玩、怎麼在熱鬧中做真正有意義的事。</p>
+      <p>旭日營，是一場屬於各方好友的聚會。<br>我們邀請你暫時離開城市的快節奏，來到宜蘭的山與海之間，放下手機、放下工作，好好地與人相聚。
+      這裡有老朋友的重逢，也有新朋友的相識。<br>趁著這個週末，打破原本的生活圈，認識不同背景的人，說不定就找到了那個一拍即合的好夥伴。<br>
+     同時，你也會初步認識扶青社的理念與日常，了解我們怎麼一起做公益、怎麼一起玩、怎麼在熱鬧中做真正有意義的事。</p>
     </div>
     <div class="highlights">
       <div class="highlight-card">
@@ -1108,21 +1108,17 @@
     // https://docs.google.com/forms/d/e/FORM_ID/viewform?usp=pp_url
     //   &entry.XXXXX=姓名&entry.YYYYY=手機 ...
     // Organisers: replace FORM_ID below with your actual Google Form ID
-    const FORM_ID = 'YOUR_GOOGLE_FORM_ID'; // ← 請替換成你的 Google 表單 ID
-    const prefillUrl = `https://docs.google.com/forms/d/e/${FORM_ID}/viewform?usp=pp_url`
-      + `&entry.100000001=${encodeURIComponent(name)}`
-      + `&entry.100000002=${encodeURIComponent(nickname)}`
-      + `&entry.100000003=${encodeURIComponent(phone)}`
-      + `&entry.100000004=${encodeURIComponent(email)}`
-      + `&entry.100000005=${encodeURIComponent(gender)}`
-      + `&entry.100000006=${encodeURIComponent(occupation)}`
-      + `&entry.100000007=${encodeURIComponent(rotaract)}`
-      + `&entry.100000008=${encodeURIComponent(referrer)}`
-      + `&entry.100000009=${encodeURIComponent(diet)}`
-      + `&entry.100000010=${encodeURIComponent(message)}`;
+  // 直接定義你的表單連結
+    const targetUrl = "https://docs.google.com/forms/d/e/1FAIpQLScX_5T5drkpErlQCh-zVC-c38tuWBOXdbpzvtqnWGjOyS_JJw/viewform";
 
-    document.getElementById('googleFormBtn').href = prefillUrl;
+    // 更新下方按鈕的連結
+    document.getElementById('googleFormBtn').href = targetUrl;
+
+    // 當使用者在網頁按「送出」時，直接開啟表單
+    window.open(targetUrl, "_blank");
   });
+
+  
 </script>
 </body>
 </html>
