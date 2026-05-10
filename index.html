@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>旭日營 2026 — 與好友同樂，結識新圈子</title>
+<title>旭日營 2026— 與好友同樂，結識新圈子</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500&family=Playfair+Display:ital,wght@0,900;1,700&display=swap" rel="stylesheet">
 <style>
@@ -672,7 +672,7 @@
   .success-state.show { display: block; }
   .form-form.hidden { display: none; }
 
-  .success-emoji { font-size: 56px; margin-bottom: 20px; }
+  .success-confetti { font-size: 56px; margin-bottom: 20px; }
 
   .success-title {
     font-family: 'Noto Serif TC', serif;
@@ -686,27 +686,69 @@
     font-size: 15px;
     color: #7A5C45;
     line-height: 1.8;
+    margin-bottom: 32px;
   }
 
-  /* google form link */
-  .google-form-link {
-    display: inline-flex;
+  /* QR Code */
+  .qr-wrapper {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 8px;
-    background: #4285f4;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 12px 24px;
-    border-radius: 999px;
-    text-decoration: none;
-    margin-top: 28px;
-    transition: background 0.2s, transform 0.2s;
+    gap: 12px;
+    margin: 0 auto 28px;
   }
-  .google-form-link:hover {
-    background: #3367d6;
-    transform: translateY(-2px);
+
+  .qr-label {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--earth);
+    letter-spacing: 1px;
   }
+
+  .qr-box {
+    width: 220px;
+    height: 220px;
+    border: 2.5px dashed var(--sun);
+    border-radius: 20px;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .qr-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .qr-icon { font-size: 40px; }
+
+  .qr-hint {
+    font-size: 13px;
+    color: #9A7A65;
+    font-weight: 400;
+  }
+
+  .qr-sub {
+    font-size: 13px;
+    color: #9A7A65;
+  }
+
+  .success-info {
+    font-size: 13px;
+    color: #9A7A65;
+    line-height: 1.9;
+    padding: 16px 20px;
+    background: var(--cream);
+    border-radius: 12px;
+    display: inline-block;
+  }
+
+  .success-info strong { color: var(--dawn); }
 
   @media (max-width: 680px) {
     .form-card { padding: 36px 24px; }
@@ -799,7 +841,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="rays"></div>
-  <div class="hero-badge">✦ 新東扶青社 × 旭日營 2026 ✦</div>
+  <div class="hero-badge">✦ 新東扶青社 × 旭日營 2025 ✦</div>
   <h1 class="hero-title">旭<span>日</span>營</h1>
   <p class="hero-sub">暫別城市喧囂，與好友共迎宜蘭的日出</p>
   <div class="hero-meta">
@@ -877,7 +919,7 @@
       <div class="day-block">
         <div class="day-number">01</div>
         <div class="day-title">Day 1 — 出發，相聚</div>
-        <div class="day-date">6 月 6 日（五）</div>
+        <div class="day-date">6 月 6 日（六）</div>
         <ul class="day-items">
           <li class="day-item"><div class="day-item-dot"></div><span>集合出發，前往宜蘭</span></li>
           <li class="day-item"><div class="day-item-dot"></div><span>抵達民宿，安頓入住</span></li>
@@ -889,13 +931,13 @@
       <div class="day-block">
         <div class="day-number">02</div>
         <div class="day-title">Day 2 — 探索，相惜</div>
-        <div class="day-date">6 月 7 日（六）</div>
+        <div class="day-date">6 月 7 日（日）</div>
         <ul class="day-items">
           <li class="day-item"><div class="day-item-dot"></div><span>悠閒早餐、美好早晨</span></li>
           <li class="day-item"><div class="day-item-dot"></div><span>宜蘭景點自由探索</span></li>
           <li class="day-item"><div class="day-item-dot"></div><span>戶外活動體驗</span></li>
           <li class="day-item"><div class="day-item-dot"></div><span>午餐後依依不捨返程</span></li>
-          <li class="day-item"><div class="day-item-dot"></div><span>帶著新朋友的聯絡方式回家</span></li>
+          <li class="day-item"><div class="day-item-dot"></div><span>帶著新體驗與回憶回家</span></li>
         </ul>
       </div>
     </div>
@@ -926,7 +968,7 @@
         </div>
         <div class="pillar">
           <div class="pillar-emoji">🤝</div>
-          <div class="pillar-name">真誠友誼</div>
+          <div class="pillar-name">一同成長</div>
         </div>
       </div>
     </div>
@@ -968,17 +1010,16 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label">性別</label>
+          <label class="form-label">性別 <span>*</span></label>
           <div class="radio-group">
-            <label class="radio-option"><input type="radio" name="gender" value="男"> <span>男</span></label>
+            <label class="radio-option"><input type="radio" name="gender" value="男" required> <span>男</span></label>
             <label class="radio-option"><input type="radio" name="gender" value="女"> <span>女</span></label>
-            <label class="radio-option"><input type="radio" name="gender" value="不公開"> <span>不公開</span></label>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="form-label">職業 / 學校</label>
-          <input class="form-input" type="text" name="occupation" placeholder="目前的工作或就讀學校">
+          <label class="form-label">職業 or 科系</label>
+          <input class="form-input" type="text" name="occupation" placeholder="目前的工作或就讀科系">
         </div>
 
         <div class="form-divider"></div>
@@ -987,21 +1028,22 @@
           <label class="form-label">是否認識扶青社？ <span>*</span></label>
           <select class="form-select" name="rotaract_knowledge" required>
             <option value="" disabled selected>請選擇</option>
-            <option value="完全不了解">完全不了解，第一次聽說</option>
-            <option value="略有耳聞">略有耳聞，想多了解</option>
-            <option value="有些了解">有些了解</option>
-            <option value="非常了解">非常了解，甚至是社員</option>
+            <option value="完全不了解，第一次聽說">完全不了解，第一次聽說</option>
+            <option value="略有耳聞想多了解一點">略有耳聞想多了解一點</option>
+            <option value="有些了解，朋友是社員">有些了解，朋友是社員</option>
+            <option value="本人是社員">本人是社員</option>
           </select>
         </div>
 
         <div class="form-group">
           <label class="form-label">對哪類活動最感興趣？（可複選）</label>
           <div class="checkbox-group">
-            <label class="checkbox-option"><input type="checkbox" name="interest" value="公益服務活動"> <span>🤝 公益服務活動</span></label>
-            <label class="checkbox-option"><input type="checkbox" name="interest" value="美食聚會"> <span>🍜 美食聚會</span></label>
-            <label class="checkbox-option"><input type="checkbox" name="interest" value="戶外旅遊"> <span>🏕️ 戶外旅遊</span></label>
-            <label class="checkbox-option"><input type="checkbox" name="interest" value="交流分享"> <span>💬 交流分享</span></label>
-            <label class="checkbox-option"><input type="checkbox" name="interest" value="其他"> <span>✨ 其他</span></label>
+            <label class="checkbox-option"><input type="checkbox" name="interest" value="🤝 公益服務活動"> <span>🤝 公益服務活動</span></label>
+            <label class="checkbox-option"><input type="checkbox" name="interest" value="🍜 美食聚會"> <span>🍜 美食聚會</span></label>
+            <label class="checkbox-option"><input type="checkbox" name="interest" value="💬 人脈交流"> <span>💬 人脈交流</span></label>
+            <label class="checkbox-option"><input type="checkbox" name="interest" value="🏕️ 戶外旅遊"> <span>🏕️ 戶外旅遊</span></label>
+            <label class="checkbox-option"><input type="checkbox" name="interest" value="🙏各式工作坊"> <span>🙏 各式工作坊</span></label>
+            <label class="checkbox-option"><input type="checkbox" name="interest" value="🦋參觀展覽"> <span>🦋 參觀展覽</span></label>
           </div>
         </div>
 
@@ -1026,28 +1068,43 @@
 
       <!-- SUCCESS STATE -->
       <div class="success-state" id="successState">
-        <div class="success-emoji">🌅</div>
-        <div class="success-title">報名成功！太棒了 🎉</div>
+        <div class="success-confetti">🌅</div>
+        <div class="success-title">恭喜你成功加入旭日營！🎉</div>
         <div class="success-desc">
-          謝謝你的熱情！我們已收到你的報名資訊<br>
-          主辦團隊會盡快與你聯繫確認<br>
-          期待在宜蘭與你相見 ☀️<br><br>
-          <strong>旭日營 | 6/6–6/7 | 宜蘭</strong>
+          報名資料已送出，歡迎你的到來！<br>
+          掃描下方 QR Code 加入旭日營群組<br>
+          我們在那裡等你 ☀️
         </div>
-        <a href="https://docs.google.com/forms/create" target="_blank" class="google-form-link">
-          📋 用 Google 表單也可以報名
-        </a>
+
+        <!-- QR Code 區塊 -->
+        <div class="qr-wrapper">
+          <div class="qr-label">加入旭日營群組</div>
+          <div class="qr-box">
+            <!-- 請將此處替換為你的 QR Code 圖片，範例：
+                 <img src="your-qrcode.png" alt="群組 QR Code" style="width:100%;height:100%;object-fit:contain;border-radius:12px;">
+            -->
+            <div class="qr-placeholder">
+              <div class="qr-icon">📱</div>
+              <div class="qr-hint">QR Code 置於此處</div>
+            </div>
+          </div>
+          <div class="qr-sub">掃碼加入旭日營成員群組</div>
+        </div>
+
+        <div class="success-info">
+          <strong>旭日營 2026</strong> ｜ 6/6–6/7 ｜ 宜蘭<br>
+          主辦：新東扶青社 Rotaract Club
+        </div>
       </div>
     </div>
-
-   </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p><strong>旭日營 2025</strong></p>
+  <p><strong>旭日營 2026</strong></p>
   <p>主辦：新東扶青社 Rotaract Club</p>
-  <p>活動日期：2025年6月6日 — 6月7日 ｜ 地點：宜蘭</p>
+  <p>活動日期：2026年6月6日 — 6月7日 ｜ 地點：宜蘭</p>
   <p style="margin-top:16px;">Made with ☀️ & ❤️ by 新東扶青社</p>
 </footer>
 
@@ -1070,48 +1127,54 @@
   }, { threshold: 0.12 });
   reveals.forEach(r => observer.observe(r));
 
-  // Form submit — builds Google Form prefill URL
+  // Form submit — silently sends to Google Form in background, shows success + QR
   document.getElementById('regForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
     const data = new FormData(this);
-    const name = data.get('name') || '';
-    const nickname = data.get('nickname') || '';
-    const phone = data.get('phone') || '';
-    const email = data.get('email') || '';
-    const gender = data.get('gender') || '';
+    const name       = data.get('name') || '';
+    const nickname   = data.get('nickname') || '';
+    const phone      = data.get('phone') || '';
+    const email      = data.get('email') || '';
+    const gender     = data.get('gender') || '';
     const occupation = data.get('occupation') || '';
-    const rotaract = data.get('rotaract_knowledge') || '';
-    const referrer = data.get('referrer') || '';
-    const diet = data.get('diet') || '';
-    const message = data.get('message') || '';
+    const rotaract   = data.get('rotaract_knowledge') || '';
+    const referrer   = data.get('referrer') || '';
+    const diet       = data.get('diet') || '';
+    const message    = data.get('message') || '';
+    const interests  = data.getAll('interest');
 
-    // Show success
+    // Build Google Form submit URL (uses /formResponse endpoint for silent submit)
+    const FORM_ID = '1FAIpQLScX_5T5drkpErlQCh-zVC-c38tuWBOXdbpzvtqnWGjOyS_JJw';
+    const submitBase = `https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`;
+
+    const params = new URLSearchParams();
+    params.append('entry.217359375', name);
+    params.append('entry.1615601248', nickname);
+    params.append('entry.2121108397', phone);
+    params.append('entry.249184724', email);
+    params.append('entry.1592011565', gender);
+    params.append('entry.1336187239', occupation);
+    params.append('entry.837413181', rotaract);
+    interests.forEach(i => params.append('entry.1442158832', i));
+    params.append('entry.1404409017', referrer);
+    params.append('entry.1983798718', diet);
+    params.append('entry.1301492696', message);
+
+    // Silent background submit via no-cors fetch (Google Form doesn't support CORS,
+    // so we use no-cors — the request goes through but we can't read the response,
+    // which is fine since we show success immediately)
+    fetch(submitBase, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params.toString()
+    }).catch(() => {}); // ignore any network errors silently
+
+    // Show success screen immediately — no redirect
     document.querySelector('.form-form').classList.add('hidden');
     document.getElementById('successState').classList.add('show');
-
-    // Scroll to success
     document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
-
-    // Build a Google Form pre-fill URL (replace FORM_ID and entry IDs with real ones)
-    // Template:
-    // https://docs.google.com/forms/d/e/FORM_ID/viewform?usp=pp_url
-    //   &entry.XXXXX=姓名&entry.YYYYY=手機 ...
-    // Organisers: replace FORM_ID below with your actual Google Form ID
-    const FORM_ID = '115283354934568851249'; // ← 請替換成你的 Google 表單 ID
-    const prefillUrl = `https://docs.google.com/forms/d/e/${115283354934568851249}/viewform?usp=pp_url`
-      + `&entry.217359375=${encodeURIComponent(name)}`
-      + `&entry.1615601248=${encodeURIComponent(nickname)}`
-      + `&entry.2121108397=${encodeURIComponent(phone)}`
-      + `&entry.249184724=${encodeURIComponent(email)}`
-      + `&entry.1592011565=${encodeURIComponent(gender)}`
-      + `&entry.1404409017=${encodeURIComponent(occupation)}`
-      + `&entry.837413181=${encodeURIComponent(rotaract)}`
-      + `&entry.1336187239=${encodeURIComponent(referrer)}`
-      + `&entry.837413181=${encodeURIComponent(diet)}`
-      + `&entry.1983798718=${encodeURIComponent(message)}`;
-
-    document.getElementById('googleFormBtn').href = prefillUrl;
   });
 </script>
 </body>
