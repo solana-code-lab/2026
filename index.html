@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>旭日營 2026— 與好友同樂，結識新圈子</title>
+<title>旭日營 2026 — 與好友同樂，結識新圈子</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500&family=Playfair+Display:ital,wght@0,900;1,700&display=swap" rel="stylesheet">
 <style>
@@ -106,9 +106,7 @@
     z-index: 2;
   }
 
-  .hero-title span {
-    color: var(--sky);
-  }
+  .hero-title span { color: var(--sky); }
 
   .hero-sub {
     font-family: 'Playfair Display', serif;
@@ -698,14 +696,6 @@
     margin: 0 auto 28px;
   }
 
-  .qr-label {
-    font-family: 'Noto Serif TC', serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--earth);
-    letter-spacing: 1px;
-  }
-
   .qr-box {
     width: 220px;
     height: 220px;
@@ -718,37 +708,10 @@
     overflow: hidden;
   }
 
-  .qr-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .qr-icon { font-size: 40px; }
-
-  .qr-hint {
-    font-size: 13px;
-    color: #9A7A65;
-    font-weight: 400;
-  }
-
   .qr-sub {
     font-size: 13px;
     color: #9A7A65;
   }
-
-  .success-info {
-    font-size: 13px;
-    color: #9A7A65;
-    line-height: 1.9;
-    padding: 16px 20px;
-    background: var(--cream);
-    border-radius: 12px;
-    display: inline-block;
-  }
-
-  .success-info strong { color: var(--dawn); }
 
   @media (max-width: 680px) {
     .form-card { padding: 36px 24px; }
@@ -827,7 +790,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="nav">
   <div class="nav-logo">旭日營 ☀️</div>
   <ul class="nav-links">
@@ -838,7 +800,6 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="rays"></div>
   <div class="hero-badge">✦ 新東扶青社 × 旭日營 2026 ✦</div>
@@ -863,7 +824,6 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="about" id="about">
   <div class="reveal">
     <p class="section-label">✦ 活動介紹</p>
@@ -879,12 +839,12 @@
       <div class="highlight-card">
         <div class="highlight-icon">🏡</div>
         <div>
-         <div class="highlight-title">
-  包棟民宿：
-  <a href="https://twstay.tw/gongyue/" target="_blank" style="color:#2ea7e0;text-decoration:underline;">
-    三星拱月
-  </a>、放鬆入住
-</div>
+          <div class="highlight-title">
+            包棟民宿：
+            <a href="https://twstay.tw/gongyue/" target="_blank" style="color:#2ea7e0;text-decoration:underline;">
+              三星拱月
+            </a>、放鬆入住
+          </div>
           <div class="highlight-desc">整棟包下，只屬於我們的空間，自在放鬆，凌晨聊天到天亮也沒問題。</div>
         </div>
       </div>
@@ -892,7 +852,7 @@
         <div class="highlight-icon">📍</div>
         <div>
           <div class="highlight-title">報名活動</div>
-          <div class="highlight-desc">將會使用您的個資保保險，費用包含住宿及2餐（第一天的晚餐跟第二天的早餐）。</div>
+          <div class="highlight-desc">將會使用您的個資投保保險，費用包含住宿及2餐（第一天的晚餐跟第二天的早餐）。</div>
         </div>
       </div>
       <div class="highlight-card">
@@ -913,7 +873,6 @@
   </div>
 </section>
 
-<!-- SCHEDULE -->
 <section class="schedule-section" id="schedule">
   <div class="schedule-inner">
     <div class="reveal">
@@ -949,7 +908,6 @@
   </div>
 </section>
 
-<!-- ROTARY -->
 <section class="rotary-section" id="rotary">
   <div class="reveal">
     <div class="rotary-card">
@@ -980,7 +938,6 @@
   </div>
 </section>
 
-<!-- FORM -->
 <section class="form-section" id="signup">
   <div class="form-inner">
     <div class="reveal" style="text-align:center;">
@@ -990,11 +947,10 @@
     </div>
 
     <div class="form-card reveal">
-      <!-- FORM -->
       <form class="form-form" id="regForm">
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label">姓名＆暱稱 <span>*</span></label>
+            <label class="form-label">姓名 <span>*</span></label>
             <input class="form-input" type="text" name="name" placeholder="您的大名" required>
           </div>
           <div class="form-group">
@@ -1002,14 +958,15 @@
             <input class="form-input" type="text" name="nickname" placeholder="平常朋友怎麼稱呼你的？">
           </div>
         </div>
-          <div class="form-row">
+        
+        <div class="form-row">
           <div class="form-group">
             <label class="form-label">生日 <span>*</span></label>
             <input class="form-input" type="date" name="birthday" required>
           </div>
           <div class="form-group">
-            <label class="form-label">身分證<span>*</span></label>
-            <input class="form-input" type="text" name="id" required>
+            <label class="form-label">身分證 <span>*</span></label>
+            <input class="form-input" type="text" name="id" placeholder="保險用身分證字號" required>
           </div>
         </div>
 
@@ -1078,54 +1035,31 @@
         </div>
 
         <button type="submit" class="submit-btn">✨ 送出報名表</button>
-      
       </form>
-<!-- SUCCESS STATE -->
-<div class="success-state" id="successState">
-  <div class="success-confetti">🌅</div>
 
-  <div class="success-title">
-    恭喜你成功加入旭日營！🎉
-  </div>
+      <div class="success-state" id="successState">
+        <div class="success-confetti">🌅</div>
+        <div class="success-title">恭喜你成功加入旭日營！🎉</div>
+        <div class="success-desc">
+          報名資料已送出，歡迎你的到來！<br>
+          掃描下方 QR Code 加入旭日營群組<br>
+          我們在那裡等你 ☀️
+        </div>
 
-  <div class="success-desc">
-    報名資料已送出，歡迎你的到來！<br>
-    掃描下方 QR Code 加入旭日營群組<br>
-    我們在那裡等你 ☀️
-  </div>
-
-  <!-- QR Code 區塊 -->
-  <div class="qr-wrapper">
-
-    <div class="qr-box">
-      <!-- 點擊圖片可開啟連結 -->
-      <a href="https://line.me/ti/g/egnJB_ezbE" target="_blank">
-        <img 
-          src="https://cdn.phototourl.com/free/2026-05-18-7b42a5b8-0a89-43a5-9e07-3cf105946924.jpg"
-        
-          style="
-            width:100%;
-            height:100%;
-            object-fit:contain;
-            border-radius:12px;
-          "
-        >
-      </a>
-    </div>
-
-    <div class="qr-sub">
-      掃碼加入旭日營成員群組
-    </div>
-
-  </div>
-</div>
-      
+        <div class="qr-wrapper">
+          <div class="qr-box">
+            <a href="https://line.me/ti/g/egnJB_ezbE" target="_blank">
+              <img src="https://cdn.phototourl.com/free/2026-05-18-7b42a5b8-0a89-43a5-9e07-3cf105946924.jpg" style="width:100%; height:100%; object-fit:contain; border-radius:12px;" alt="LINE QR Code">
+            </a>
+          </div>
+          <div class="qr-sub">掃碼加入旭日營成員群組</div>
+        </div>
       </div>
+      
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p><strong>旭日營 2026</strong></p>
   <p>主辦：新東扶青社 Rotaract Club</p>
@@ -1152,13 +1086,15 @@
   }, { threshold: 0.12 });
   reveals.forEach(r => observer.observe(r));
 
-  // Form submit — silently sends to Google Form in background, shows success + QR
+  // Form submit
   document.getElementById('regForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
     const data = new FormData(this);
     const name       = data.get('name') || '';
     const nickname   = data.get('nickname') || '';
+    const birthday   = data.get('birthday') || ''; 
+    const id         = data.get('id') || ''; 
     const phone      = data.get('phone') || '';
     const email      = data.get('email') || '';
     const gender     = data.get('gender') || '';
@@ -1169,29 +1105,33 @@
     const message    = data.get('message') || '';
     const interests  = data.getAll('interest');
 
-  // Build Google Form submit URL (uses /formResponse endpoint for silent submit)
+    // 防錯機制：去除 Email 中的任何前後或內部空白字元
+    const cleanEmail = email.replace(/\s+/g, '');
+
+    // Build Google Form submit URL
     const FORM_ID = '1FAIpQLScX_5T5drkpErlQCh-zVC-c38tuWBOXdbpzvtqnWGjOyS_JJw';
     const submitBase = `https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`;
 
     const params = new URLSearchParams();
     
-    // 100% 精確校正後的 Entry ID 對應（包含補回的暱稱）
-    params.append('entry.217359375', name);         // 姓名
-    params.append('entry.1615601248', nickname);     // 暱稱 (最新網址對應)
-    params.append('entry.2121108397', phone);        // 行動電話
-    params.append('entry.249184724', email);         // 電子信箱
-    params.append('entry.1592011565', gender);        // 性別
-    params.append('entry.822380764', birthday);      // 出生年月日
-    params.append('entry.1336187239', occupation);   // 職業 / 專業領域
-    params.append('entry.837413181', rotaract);      // 對扶青社的了解程度
+    // 【全新升級對照表】精確綁定最新 Google 表單的所有 entry 代號
+    params.append('entry.217359375', name);                // 姓名
+    params.append('entry.1404409017', nickname);            // 暱稱 (精確修正)
+    params.append('entry.822380764', birthday);             // 生日
+    params.append('entry.1615601248', id);                  // 身分證字號
+    params.append('entry.2121108397', phone);               // 手機號碼
+    params.append('entry.249184724', cleanEmail);           // 電子信箱
+    params.append('entry.1592011565', gender);              // 性別
+    params.append('entry.1336187239', occupation);          // 職業 or 科系
+    params.append('entry.837413181', rotaract);             // 是否認識扶青社
+    params.append('entry.586036968', referrer);             // 推薦人
+    params.append('entry.1983798718', diet);                // 飲食需求 (全新對應)
+    params.append('entry.1301492696', message);             // 想說的話 (全新對應)
     
-    // 多選複選框：感興趣活動
+    // 多選複選框項目 (感興趣的活動類型)
     interests.forEach(i => params.append('entry.1442158832', i)); 
-    
-    // 推薦人欄位
-    params.append('entry.586036968', referrer);      
 
-    // ─── 原本的 Fetch / 送出邏輯（完全不動） ───
+    // 背景悄悄傳送資料給 Google Forms
     fetch(submitBase, {
         method: 'POST',
         mode: 'no-cors',
@@ -1206,9 +1146,8 @@
     .catch(error => {
         console.error('Error submitting form:', error);
     });
-}
 
-    // Show success screen immediately — no redirect
+    // 切換至精緻的報名成功 UI 畫面，並平滑捲動至頂端
     document.querySelector('.form-form').classList.add('hidden');
     document.getElementById('successState').classList.add('show');
     document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
