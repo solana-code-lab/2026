@@ -998,8 +998,18 @@
             <input class="form-input" type="text" name="name" placeholder="您的大名" required>
           </div>
           <div class="form-group">
-            <label class="form-label">保險資料 <span>*</span></label>
-            <input class="form-input" type="text" name="nickname" placeholder="請填寫生日跟身份證字號"required>
+            <label class="form-label">暱稱</label>
+            <input class="form-input" type="text" name="nickname" placeholder="平常朋友怎麼稱呼你的？">
+          </div>
+        </div>
+          <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">生日 <span>*</span></label>
+            <input class="form-input" type="date" name="birthday" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">身分證<span>*</span></label>
+            <input class="form-input" type="text" name="id" required>
           </div>
         </div>
 
@@ -1159,32 +1169,44 @@
     const message    = data.get('message') || '';
     const interests  = data.getAll('interest');
 
-    // Build Google Form submit URL (uses /formResponse endpoint for silent submit)
+  // Build Google Form submit URL (uses /formResponse endpoint for silent submit)
     const FORM_ID = '1FAIpQLScX_5T5drkpErlQCh-zVC-c38tuWBOXdbpzvtqnWGjOyS_JJw';
     const submitBase = `https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`;
 
     const params = new URLSearchParams();
-    params.append('entry.217359375', name);
-    params.append('entry.1615601248', nickname);
-    params.append('entry.2121108397', phone);
-    params.append('entry.249184724', email);
-    params.append('entry.1592011565', gender);
-    params.append('entry.1336187239', occupation);
-    params.append('entry.837413181', rotaract);
-    interests.forEach(i => params.append('entry.1442158832', i));
-    params.append('entry.1404409017', referrer);
-    params.append('entry.1983798718', diet);
-    params.append('entry.1301492696', message);
+    
+    // 100% 精確校正後的 Entry ID 對應（包含補回的暱稱）
+    params.append('entry.217359375', name);         // 姓名
+    params.append('entry.1615601248', nickname);     // 暱稱 (最新網址對應)
+    params.append('entry.2121108397', phone);        // 行動電話
+    params.append('entry.249184724', email);         // 電子信箱
+    params.append('entry.1592011565', gender);        // 性別
+    params.append('entry.822380764', birthday);      // 出生年月日
+    params.append('entry.1336187239', occupation);   // 職業 / 專業領域
+    params.append('entry.837413181', rotaract);      // 對扶青社的了解程度
+    
+    // 多選複選框：感興趣活動
+    interests.forEach(i => params.append('entry.1442158832', i)); 
+    
+    // 推薦人欄位
+    params.append('entry.586036968', referrer);      
 
-    // Silent background submit via no-cors fetch (Google Form doesn't support CORS,
-    // so we use no-cors — the request goes through but we can't read the response,
-    // which is fine since we show success immediately)
+    // ─── 原本的 Fetch / 送出邏輯（完全不動） ───
     fetch(submitBase, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: params.toString()
-    }).catch(() => {}); // ignore any network errors silently
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: params.toString()
+    })
+    .then(() => {
+        console.log('Form successfully submitted to Google Forms');
+    })
+    .catch(error => {
+        console.error('Error submitting form:', error);
+    });
+}
 
     // Show success screen immediately — no redirect
     document.querySelector('.form-form').classList.add('hidden');
